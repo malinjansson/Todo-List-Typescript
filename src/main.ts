@@ -19,12 +19,24 @@ for (let i = 0; i < myList.length; i++) {
 
     const listItem = document.createElement ("li");
     const task = document.createElement ("p");
+    const checkedBtn = document.createElement ("button");
+    checkedBtn.textContent = "Done";
     
     task.innerHTML = theList.task;
 
     listItem.appendChild (task);
+    listItem.appendChild (checkedBtn);
 
     if (listContainer) {
         listContainer.appendChild (listItem);
     }
+
+    checkedBtn.addEventListener ("click", () => {
+        if (listItem) {
+            listItem.remove ();
+        }
+
+    });
+
+    
 }
