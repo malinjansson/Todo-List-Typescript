@@ -1,5 +1,5 @@
-import { toDoList } from "./models/toDoList";
-import "./style.css";
+import { toDoList, toDoList } from "./models/toDoList";
+import "./style.scss";
 
 const taskOne = new toDoList ("Handla mat");
 const taskTwo = new toDoList ("Storstäda");
@@ -10,33 +10,34 @@ const taskSix = new toDoList ("Ta en promenad");
 const taskSeven = new toDoList ("Middag med vänner");
 const taskEight = new toDoList ("Koda en hemsida"); 
 
-const myList: toDoList[] = [taskOne, taskTwo, taskThree, taskFour,taskFive, taskSix, taskSeven, taskEight];
+const myTasks: toDoList[] = [taskOne, taskTwo, taskThree, taskFour,taskFive, taskSix, taskSeven, taskEight];
 
-const listContainer = document.getElementById ("listContainer")
+const createTheList = (myTasks: toDoList[]) => {
+    const listContainer = document.getElementById ("listContainer")
 
-for (let i = 0; i < myList.length; i++) {
-    const theList = myList[i];
+    for (let i = 0; i < myTasks.length; i++) {
+        const theList = myTasks [i];
+        const listItem = document.createElement ("li");
+        const task = document.createElement ("p");
+        const checkedBtn = document.createElement ("button")
+        checkedBtn.textContent = "X";
 
-    const listItem = document.createElement ("li");
-    const task = document.createElement ("p");
-    const checkedBtn = document.createElement ("button");
-    checkedBtn.textContent = "Done";
-    
-    task.innerHTML = theList.task;
+        task.innerHTML = theList.task;
 
-    listItem.appendChild (task);
-    listItem.appendChild (checkedBtn);
+        listItem.appendChild (task);
+        listItem.appendChild (checkedBtn);
 
-    if (listContainer) {
-        listContainer.appendChild (listItem);
-    }
-
-    checkedBtn.addEventListener ("click", () => {
-        if (listItem) {
-            listItem.remove ();
+        if (listContainer) {
+            listContainer.appendChild (listItem);
         }
 
-    });
+        checkedBtn.addEventListener ("click", () => {
+            if (listItem) {
+                listItem.remove ();
+            }
+        });
+    }
+};
 
-    
-}
+createTheList (myTasks);
+
