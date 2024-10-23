@@ -15,6 +15,7 @@ localStorage.setItem("Tasks", JSON.stringify(myTasks));
 
 const createHtml = (myTasks: toDoList[]) => {
     const listContainer = document.getElementById ("listContainer");
+    
     if (listContainer) {
         listContainer.innerHTML = "";
     }
@@ -24,7 +25,6 @@ const createHtml = (myTasks: toDoList[]) => {
         const listItem = document.createElement ("li");
         const task = document.createElement ("p");
         const checkedBtn = document.createElement ("button")
-        checkedBtn.textContent = "X";
 
         task.innerHTML = myTasks[i].task;
 
