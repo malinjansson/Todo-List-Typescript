@@ -25,11 +25,14 @@ const createHtml = (myTasks: toDoList[]) => {
         const listItem = document.createElement ("li");
         const task = document.createElement ("p");
         const checkedBtn = document.createElement ("button")
+        const checkMark = document.createElement ("span");
+        checkMark.textContent = "✔";
 
         task.innerHTML = myTasks[i].task;
 
         listItem.appendChild (task);
         listItem.appendChild (checkedBtn);
+        checkedBtn.appendChild (checkMark);
 
         if (listContainer) {
             listContainer.appendChild (listItem);
