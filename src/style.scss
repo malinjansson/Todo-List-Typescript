@@ -3,7 +3,6 @@ $primaryBackgroundColor: #fff9fe;
 $secondaryBackgroundColor:#e5849f;
 $breakpoint: 768px;
 
-
 * {
   padding: 0;
   margin: 0;
@@ -25,20 +24,30 @@ body {
   }
 }
 
+@mixin itemContainer {
+  width: 90%;
+  margin: 0, auto; 
+
+  @media (min-width: $breakpoint) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 h2 {
   text-transform: uppercase;
   display: flex;
   justify-content: center;
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   text-decoration: underline;
   font-weight: 900;
   letter-spacing: 1px;
 }
 
 #itemContainer {
-  width: 90%;
-  margin: 0 auto;
+  @include itemContainer ();
 }
 
 .row-cols-auto {
@@ -76,14 +85,6 @@ h2 {
     span {
       color: #ffffff;
     }
-  }
-}
-
-@media (min-width: $breakpoint) {
-  #itemContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
   }
 }
 
