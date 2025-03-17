@@ -20,3 +20,25 @@ A todo-list application built with [Vite](https://vite.dev/) and TypeScript. The
 ![image](./demo/3.png)
 ![image](./demo/4.png)
 
+## Installation
+### 1. Clone this repository
+```
+https://github.com/malinjansson/TodoTypeScript.git
+```
+
+### 2. Navigate to the project folder
+```
+cd TodoTypeScript
+```
+
+### 3. Install dependencies
+```
+npm install
+```
+
+### 4. Run the application
+```
+npm run dev
+```
+The application will be available at local: http://localhost:5173/
+
